@@ -5,7 +5,9 @@ import subprocess
 
 TEST_PROGRAM = 'main.exe'
 MAX_SOURCE_STRING_LENGTH = 50
-LETTERS = (*string.ascii_lowercase, ' ')
+PUNCTUATION = '}!#$%&()+,-./:;<=>?@[]^_`|~'  # убрано "'{\*
+CYRILLIC = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
+LETTERS = (*string.ascii_letters, *string.digits, *PUNCTUATION, ' ')  # *string.punctuation
 
 
 def generate_random_string(length: int) -> str:
